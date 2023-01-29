@@ -1,0 +1,17 @@
+.footer {
+    padding: 34px 0 47px 0;
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 57px;
+        flex-wrap: wrap;
+    }
+    &__link {
+        display: inline-block;
+        &:hover {
+            transform: scale(0.9);
+            transition: all 0.4s ease 0s;
+        }
+    }
+}

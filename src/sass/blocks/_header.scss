@@ -1,0 +1,114 @@
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    &__flex-wrapper {
+        display: flex;
+        align-items: center;
+        height: 114px;
+    }
+    &__download {
+        max-width: 252px;
+        padding: 0 0 0 122px;
+    }
+    &__burger {
+        width: 30px;
+        height: 19px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        outline: none;
+        span {
+            display: inline-block;
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+        }
+    }
+    &__close {
+        width: 30px;
+        height: 20px;
+        display: none;
+        position: relative;
+        &_1 {
+            position: absolute;
+            display: inline-block;
+            background-color: #000;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        &_2 {
+            position: absolute;
+            display: inline-block;
+            background-color: #000;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+}
+
+.logo {
+    &__wrapper {
+        max-width: 140px;
+        display: flex;
+        align-items: center;
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.4s ease 0s;
+        }
+    }
+    &__icon {
+        max-width: 40px;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__subtitle {
+        margin: 0 0 0 5px;
+        @include logo-text-style;
+        color: #000;
+        span {
+            @include logo-text-style;
+            color: $main-color-maket;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin: 0 35px 0 0;
+    }
+    &__link {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 10px;
+        color: #000;
+        line-height: 1.2;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 5px;
+        &:hover {
+            box-shadow:
+            1px 1px $main-color-maket,
+            2px 2px $main-color-maket,
+            3px 3px $main-color-maket;
+            transform: translateX(-3px);
+            transition: all 0.4s ease 0s;
+        }
+    }
+}

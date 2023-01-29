@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Rubik:wght@400;700&display=swap');
+
+@import 'libs/reset';
+
+@import 'base/variables';
+@import 'base/mixins';
+
+@import 'blocks/header';
+@import 'blocks/take-care';
+@import 'blocks/stay-safe';
+@import 'blocks/numbers';
+@import 'blocks/talk-to-experts';
+@import 'blocks/healthcare';
+@import 'blocks/footer';
+
+* {
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.333;
+}
+
+.container {
+    max-width: 1070px;
+    padding: 0 15px;
+    margin: 0 auto;
+    &__header {
+        max-width: 1087px;
+        padding: 0 15px;
+    }
+    &__take-care {
+        padding: 153px 0 48px 0;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100vw;
+            height: 100%;
+            top: 0;
+            right: 258px;
+            transform: translateX(100%);
+            background-color: $main-color-maket;
+            border-radius: 30px 0px 0px 30px;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    color: #FCFDFE;
+    padding: 14px 30px;
+    border-radius: 5px;
+    background-color: $main-color-maket;
+    &:hover {
+        background-color: $second-color-maket;
+        transition: all 0.4s ease 0s;
+    }
+    &_blue {
+        background-color: $second-color-maket;
+        &:hover {
+            background-color: #fff;
+            color: $main-color-maket;
+            transition: all 0.4s ease 0s;
+        }
+    }
+}
+
+.title {
+    @include title-text-style;
+    span {
+        @include title-text-style;
+        color: $main-color-maket;
+    }
+    &__take-care {
+        span {
+            color: $second-color-maket;
+        }
+    }
+    &__talk-to-experts {
+        span {
+            color: $second-color-maket;
+        }
+    }
+}
+
+.subtitle {
+    margin: 12px 0 0 0;
+    line-height: 1.385;
+    letter-spacing: 0.08em;
+    color: #616161;
+    &__healthcare {
+        max-width: 600px;
+        margin: 14px auto 0 auto;
+    }
+}
+
+// Mobile Nav
+.header__flex-wrapper.active {
+    padding: 10px 0 20px 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.header__download.active {
+    display: inline-block;
+    padding: 0;
+}
+.nav.active {
+    display: flex;
+    flex-grow: 0;
+}
+.nav__list.active {
+    flex-direction: column;
+    align-items: center;
+}
+.nav__item.active {
+    &:not(:last-child){
+        margin: 0 0 30px 0;
+    }
+}
+.nav__link.active {
+    font-size: 16px;
+}
+.header__burger.active {
+    display: none;
+}
+.header__close.active {
+    display: inline-block;
+
+}
+.header__logo-wrapper.active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.header__logo.active {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.background {
+    background-color: #fff;
+}
+
+@import 'blocks/media';
+
+@media (min-width: 320px) and (max-width: 1070px) {
+    .take-care__wrapper {
+        padding: 0 15px 0 15px;
+    }
+    .stay-safe__wrapper {
+        padding: 0;
+    }
+    .take-care__link {
+        padding: 0 0 0 15px;
+    }
+    .talk-to-experts__wrapper {
+        padding: 0;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+    .take-care__link {
+        padding: 0;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 640px) {
+    .take-care__text {
+        max-width: 260px;
+    }
+    .content {
+        padding: 28px 20px;
+        &__title {
+            font-size: 32px;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .header__flex-wrapper.active {
+        padding: 20px 0 0 0;
+    }
+}
